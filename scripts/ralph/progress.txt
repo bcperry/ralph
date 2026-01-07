@@ -2,10 +2,17 @@
 Started: 2024-01-15
 
 ## Codebase Patterns
-- Migrations: IF NOT EXISTS
-- Types: Export from actions.ts
+- Package manager: Prefer `uv` over pip (e.g., `uv add`, `uv run`)
+- Migrations: Use alembic with `op.create_table` idempotent checks
+- FastAPI: Use `Depends()` for dependency injection
+- Pydantic: Inherit from BaseModel, use Field() for validation
+- Async: Use `async def` with `await` for I/O operations
+- Testing: Use pytest fixtures, mock external services with `unittest.mock`
+- Type hints: Always annotate function signatures
 
 ## Key Files
-- db/schema.ts
-- app/auth/actions.ts
+- src/models.py
+- src/api/routes.py
+- src/config.py
+- tests/conftest.py
 ---

@@ -9,7 +9,7 @@
 4. Pick highest priority story 
    where `passes: false`
 5. Implement that ONE story
-6. Run typecheck and tests
+6. Run linting, type checking, and tests
 7. Update AGENTS.md files with learnings
 8. Commit: `feat: [ID] - [Title]`
 9. Update prd.json: `passes: true`
@@ -35,8 +35,13 @@ Add reusable patterns to the TOP of progress.txt:
 
 ```
 ## Codebase Patterns
-- Migrations: Use IF NOT EXISTS
-- React: useRef<Timeout | null>(null)
+- Package manager: Prefer `uv` over pip (e.g., `uv add`, `uv run`)
+- Migrations: Use alembic with `op.create_table` idempotent checks
+- FastAPI: Use `Depends()` for dependency injection
+- Pydantic: Inherit from BaseModel, use Field() for validation
+- Async: Use `async def` with `await` for I/O operations
+- Testing: Use pytest fixtures, mock external services
+- Type hints: Always annotate function signatures
 ```
 
 ## Stop Condition

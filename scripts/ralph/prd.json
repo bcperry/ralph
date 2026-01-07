@@ -3,11 +3,13 @@
   "userStories": [
     {
       "id": "US-001",
-      "title": "Add login form",
+      "title": "Add user authentication endpoint",
       "acceptanceCriteria": [
-        "Email/password fields",
-        "Validates email format",
-        "typecheck passes"
+        "POST /auth/login endpoint with Pydantic request model",
+        "Returns JWT token on success",
+        "Password validation with proper error responses",
+        "mypy type checking passes",
+        "pytest tests pass"
       ],
       "priority": 1,
       "passes": false,
